@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Django central" uuid="fc358485-14fc-4c3b-804a-11e249f5d4e5">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>central_user</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Django entity_db" uuid="aef391c3-5a8d-414f-92b4-7e54de1bb05f">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>mysql_cust</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Django users_db" uuid="8b47a039-ea66-4c9f-acb9-83f6cef97d8e">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>admin</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Django default" uuid="5fcab988-8adf-46d0-aba0-64dbb94eecf2">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <auth-required>false</auth-required>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
