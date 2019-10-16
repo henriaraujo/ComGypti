@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'w*#(cgrz&3va#8qj9ikrug-*xg76o(^#&m4@+7n(iwol2p+=u8'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -77,27 +75,37 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'comgypti.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
-DATABASE_APPS_MAPPING = {'app_centraldb': 'default',
-                         'app_ccdb': 'controlcenter'}
+DATABASE_APPS_MAPPING = {'sensor': 'default',
+                         'report': 'controlcenter',
+                         'notification': 'publicentity'}
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME','centraldb'),
+        'NAME': os.environ.get('DB_NAME', 'centraldb'),
         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
-        'USER': os.environ.get('DB_USER','postgres'),
-        'PASSWORD': os.environ.get('DB_PASS','henrique'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASS', 'henrique'),
         'HOST': '127.0.0.1',
-        'PORT': '5432', # 8000 is default
+        'PORT': '5432',  # 8000 is default
     },
     'controlcenter': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DB_NAME', 'ccdb'),
+        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASS', 'henrique'),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',  # 8000 is default
+    },
+
+    'publicentity': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME', 'entitydb'),
         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
         'USER': os.environ.get('DB_USER', 'postgres'),
         'PASSWORD': os.environ.get('DB_PASS', 'henrique'),
@@ -124,7 +132,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -137,7 +144,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/

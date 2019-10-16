@@ -6,7 +6,7 @@ class Report(models.Model):
     description = models.TextField(max_length=800)
 
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta:
         app_label = 'report'
