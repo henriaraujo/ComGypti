@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'sensor',
     'controlcenter',
     'entity',
+    'routers.router'
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,10 @@ WSGI_APPLICATION = 'comgypti.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
+DATABASE_APPS_MAPPING = {'app_centraldb': 'default',
+                         'app_ccdb': 'controlcenter'}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -89,6 +94,15 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASS','henrique'),
         'HOST': '127.0.0.1',
         'PORT': '5432', # 8000 is default
+    },
+    'controlcenter': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME', 'ccdb'),
+        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASS', 'henrique'),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',  # 8000 is default
     }
 }
 
