@@ -28,6 +28,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+#AUTH_USER_MODEL = 'users.CustomUser'
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -35,14 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'alerts',
     'core',
-    'notification',
-    'person',
-    'report',
-    'sensor',
-    'controlcenter',
-    'entity',
-    'routers.router'
+    'institutions',
+    'tasks',
+    'users',
+    'data',
+     # Local
+    #'users.apps.UserConfig', # new
+    #'routers.router'
 ]
 
 MIDDLEWARE = [
@@ -78,12 +82,17 @@ WSGI_APPLICATION = 'comgypti.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
-DATABASE_APPS_MAPPING = {'sensor': 'default',
-                         'report': 'controlcenter',
-                         'notification': 'publicentity'}
+#DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
 
+
+#DATABASE_APPS_MAPPING = {'alert': 'publicentity',
+     #                    'institution': 'controlcenter',
+       #                  'notification': 'publicentity'}
+
+
+AUTH_USER_MODEL = 'users.User'
 DATABASES = {
+    #'default': {},
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DB_NAME', 'centraldb'),
@@ -116,6 +125,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
