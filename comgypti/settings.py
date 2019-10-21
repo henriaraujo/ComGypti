@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'alerts',
+    #'alerts.models.Report',
     'core',
     'institutions',
     'tasks',
     'users',
     'data',
+    'rest_framework',
      # Local
     #'users.apps.UserConfig', # new
     #'routers.router'

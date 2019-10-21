@@ -7,7 +7,7 @@ from alerts.models import Report, Sensor, Notification
 
 
 class ReportViewSet(ModelViewSet):
-    queryset = Report.object.all()
+    queryset = Report.objects.all()
     serializer_class = ReportSerializer
 
 

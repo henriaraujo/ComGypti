@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import (
+    BaseUserManager, AbstractBaseUser
+)
 from .modelUser import UserManager
 
 
@@ -11,12 +13,12 @@ class User(AbstractBaseUser):
         unique=True,
     )
     active = models.BooleanField(default=True)
-    staff = models.BooleanField(default=False) # a admin user; non super-user
-    admin = models.BooleanField(default=False) # a superuser
+    staff = models.BooleanField(default=False)  # a admin user; non super-user
+    admin = models.BooleanField(default=False)  # a superuser
     # notice the absence of a "Password field", that's built in.
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [] # Email & Password are required by default.
+    REQUIRED_FIELDS = []  # Email & Password are required by default.
 
     def get_full_name(self):
         # The user is identified by their email address
@@ -26,7 +28,7 @@ class User(AbstractBaseUser):
         # The user is identified by their email address
         return self.email
 
-    def __str__(self):              # __unicode__ on Python 2
+    def __str__(self):  # __unicode__ on Python 2
         return self.email
 
     def has_perm(self, perm, obj=None):
@@ -54,4 +56,5 @@ class User(AbstractBaseUser):
         "Is the user active?"
         return self.active
 
-
+    class Meta:
+        app_label = 'users'

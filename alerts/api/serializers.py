@@ -6,7 +6,7 @@ from alerts.models import Report, Sensor, Notification
 class ReportSerializer(ModelSerializer):
     class Meta:
         model = Report
-        fields = ('id', 'name', 'description',)
+        fields = ('id', 'title', 'description',)
 
 
 class SensorSerializer(ModelSerializer):

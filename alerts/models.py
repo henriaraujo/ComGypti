@@ -4,12 +4,11 @@ from django.db import models
 class Report(models.Model):
     title = models.CharField(max_length=12)
     description = models.TextField(max_length=800)
-
     def __str__(self):
         return self.title
 
     class Meta:
-        app_label = 'alert'
+        app_label = 'users'
 
 
 class Notification(models.Model):
@@ -19,7 +18,7 @@ class Notification(models.Model):
         return self.name
 
     class Meta:
-        app_label = "alert"
+        app_label = "notifications"
 
 
 class Sensor(models.Model):
@@ -30,5 +29,5 @@ class Sensor(models.Model):
         return self.name
 
     class Meta:
-        app_label = 'alert'
+        app_label = 'sensors'
 
