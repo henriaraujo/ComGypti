@@ -12,7 +12,7 @@ class ReportSerializer(ModelSerializer):
 class SensorSerializer(ModelSerializer):
     class Meta:
         model = Sensor
-        fields = ('id', 'type')
+        fields = ('id',)
 
 
 class NotificationSerializer(ModelSerializer):

@@ -7,8 +7,8 @@ class Report(models.Model):
     def __str__(self):
         return self.title
 
-    class Meta:
-        app_label = 'users'
+    # class Meta:
+    #     app_label = 'report'
 
 
 class Notification(models.Model):
@@ -17,17 +17,17 @@ class Notification(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
-        app_label = "notifications"
+    # class Meta:
+    #     app_label = "notification"
 
 
 class Sensor(models.Model):
     name = models.CharField(max_length=12)
-    types = [{0: 'MosquitoSensor'}, {1: 'HumiditySensor'}, {2: 'CarbonDioxideSensor'}, {3: 'BrightnessSensor'}]
+    # types = [{0: 'MosquitoSensor'}, {1: 'HumiditySensor'}, {2: 'CarbonDioxideSensor'}, {3: 'BrightnessSensor'}]
 
     def __str__(self):
         return self.name
 
-    class Meta:
-        app_label = 'sensors'
+    # class Meta:
+    #     app_label = 'sensor'
 
