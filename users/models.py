@@ -60,5 +60,4 @@ class User(AbstractBaseUser):
     #     app_label = 'users'
 
 
-class AgentUser(User):
-    agent_unit = models.CharField(max_length=12)
+

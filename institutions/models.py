@@ -2,10 +2,10 @@ from django.db import models
 
 
 class Institution(models.Model):
-    pass
+    name = models.CharField(max_length=12)
 
 
-class ConrolCenter(Institution):
+class ControlCenter(Institution):
     pass
 
 
