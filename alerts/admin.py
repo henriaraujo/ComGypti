@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from alerts.models import Report, Notification, Sensor
+
+admin.site.register(Report)
+admin.site.register(Notification)
+admin.site.register(Sensor)

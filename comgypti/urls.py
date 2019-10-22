@@ -30,7 +30,6 @@ router.register('reports', ReportViewSet)
 router.register('sensors', SensorViewSet)
 router.register('notifications', NotificationViewSet)
 
-
 urlpatterns = [
                   path('', include(router.urls)),
                   path('admin/', admin.site.urls),
