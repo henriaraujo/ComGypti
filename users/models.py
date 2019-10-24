@@ -1,3 +1,4 @@
+import self as self
 from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
@@ -58,6 +59,4 @@ class User(AbstractBaseUser):
 
     # class Meta:
     #     app_label = 'users'
-
-
 
