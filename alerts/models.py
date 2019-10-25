@@ -1,12 +1,12 @@
 from django.db import models
 
+from institutions.models import PublicEntity, ControlCenter
+
 
 class Report(models.Model):
     title = models.CharField(max_length=12)
     description = models.TextField(max_length=800)
-
-    def __str__(self):
-        return self.title
+    control_center = models.ForeignKey(ControlCenter, on_delete=models.CASCADE)
 
     # class Meta:
     #     app_label = 'report'
@@ -14,9 +14,7 @@ class Report(models.Model):
 
 class Notification(models.Model):
     name = models.CharField(max_length=12)
-
-    def __str__(self):
-        return self.name
+    public_entity = models.ForeignKey(PublicEntity, on_delete=models.CASCADE)
 
     # class Meta:
     #     app_label = "notification"
@@ -27,10 +25,10 @@ class Sensor(models.Model):
     tolerance_to_make_a_alert = models.FloatField(max_length=12)
 
 
-
-
 class HumiditySensor(Sensor):
-    pass
+    match_alert_with_mosquito_sensor = models.FloatField(default=0)
+    match_alert_with_brightness_sensor = models.FloatField(default=0)
+    match_alert_with_carbon_dioxide_sensor = models.FloatField(default=0)
 
 
 class MosquitoSensor(Sensor):
@@ -48,11 +46,31 @@ class MosquitoSensor(Sensor):
         choices=FREQUENCY_LIST_CHOICES,
         default=DAY,
     )
+    match_alert_with_brightness_sensor = models.FloatField(default=0)
+    match_alert_with_humidity_sensor = models.FloatField(default=0)
+    match_alert_with_carbon_dioxide_sensor = models.FloatField(default=0)
+
+
+    '''if match_alert_with_brightness_sensor > 0:
+        pass
+    if match_alert_with_carbon_dioxide_sensor > 0:
+        pass
+    if match_alert_with_humidity_sensor > 0:
+       pass'''
 
 
 class BrightnessSensor(Sensor):
-    pass
+    turn_off_system_night = models.BooleanField(default=False)
+
+    match_alert_with_mosquito_sensor = models.FloatField(default=0)
+    match_alert_with_humidity_sensor = models.FloatField(default=0)
+    match_alert_with_carbon_dioxide_sensor = models.FloatField(default=0)
 
 
 class CarbonDioxideSensor(Sensor):
-    pass
+    coordinate_of_greater_gas_centering = models.CharField(max_length=12)
+
+    match_alert_with_mosquito_sensor = models.FloatField(default=0)
+    match_alert_with_humidity_sensor = models.FloatField(default=0)
+    match_alert_with_brightness_sensor = models.FloatField(default=0)
+

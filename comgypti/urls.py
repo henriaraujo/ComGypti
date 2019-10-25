@@ -20,7 +20,7 @@ from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
 
-from alerts.api.viewsets import ReportViewSet, SensorViewSet, NotificationViewSet
+from alerts.api.viewsets import ReportViewSet, SensorViewSet, NotificationViewSet, HumiditySensorViewSet
 from users.api.viewsets import UserViewSet
 
 router = routers.DefaultRouter()
@@ -29,6 +29,7 @@ router.register('users', UserViewSet)
 router.register('reports', ReportViewSet)
 router.register('sensors', SensorViewSet)
 router.register('notifications', NotificationViewSet)
+router.register('humitysensors', HumiditySensorViewSet)
 
 urlpatterns = [
                   path('', include(router.urls)),
