@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from tasks.models import WorkAssignment, Measure
+
+admin.site.register(WorkAssignment)
+admin.site.register(Measure)

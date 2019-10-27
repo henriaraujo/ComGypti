@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'users',
     'data',
     'rest_framework',
+    'googlemaps',
      # Local
     #'users.apps.UserConfig', # new
-    #'routers',
+    'routers',
+   # 'googlemaps',
 ]
 
 MIDDLEWARE = [

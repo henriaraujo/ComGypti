@@ -1,4 +1,3 @@
-
 from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
@@ -20,6 +19,9 @@ class User(AbstractBaseUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []  # Email & Password are required by default.
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def get_full_name(self):
         # The user is identified by their email address
@@ -60,3 +62,14 @@ class User(AbstractBaseUser):
     class Meta:
         app_label = 'users'
 
+
+class Agent(User):
+    pass
+
+
+class Responsible(User):
+    pass
+
+
+class Citizen(User):
+    pass
