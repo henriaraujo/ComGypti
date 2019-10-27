@@ -95,7 +95,15 @@ DATABASE_APPS_MAPPING = {'alerts': 'controlcenter',
 
 AUTH_USER_MODEL = 'users.User'
 DATABASES = {
-    'default': {},
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME', 'centraldb'),
+        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASS', 'henrique'),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',  # 8000 is default
+    },
     'central': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DB_NAME', 'centraldb'),

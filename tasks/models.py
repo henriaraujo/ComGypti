@@ -13,13 +13,13 @@ class Measure(models.Model):
     def __str__(self):
         return 'Em construção'
 
-    class Meta:
-        app_label = 'tasks'
+    def __init__(self):
+        self.app_label = 'tasks'
 
 
 class WorkAssignment(models.Model):
     agentUsernameDesignation = models.CharField(max_length=12)
     public_entity = models.ForeignKey(PublicEntity, on_delete=models.CASCADE)
 
-    class Meta:
-        app_label = 'tasks'
+    def __init__(self):
+        self.app_label = 'tasks'
