@@ -6,35 +6,28 @@ from institutions.models import PublicEntity, ControlCenter
 class Report(models.Model):
     title = models.CharField(max_length=12)
     description = models.TextField(max_length=800)
+
     control_center = models.ForeignKey(ControlCenter, on_delete=models.CASCADE)
 
-
-    def __init__(self):
-        self.app_label = 'alerts'
+    class Meta:
+        app_label = 'alerts'
 
 
 class Notification(models.Model):
     name = models.CharField(max_length=12)
+
     public_entity = models.ForeignKey(PublicEntity, on_delete=models.CASCADE)
 
-
-    def __init__(self):
-        self.app_label = 'alerts'
-
-   # class Meta:
-   #     app_label = 'alerts'
+    class Meta:
+        app_label = 'alerts'
 
 
 class Sensor(models.Model):
     name = models.CharField(max_length=12)
     tolerance_to_make_a_alert = models.FloatField(max_length=12)
 
-    def __init__(self):
-        self.app_label = 'alerts'
-
-    #class Meta:
-    #    app_label = 'alerts'
-
+    class Meta:
+        app_label = 'alerts'
 
 
 class HumiditySensor(Sensor):
@@ -42,9 +35,8 @@ class HumiditySensor(Sensor):
     match_alert_with_brightness_sensor = models.FloatField(default=0)
     match_alert_with_carbon_dioxide_sensor = models.FloatField(default=0)
 
-
-    def __init__(self):
-        self.app_label = 'alerts'
+    class Meta:
+        app_label = 'alerts'
 
 
 class MosquitoSensor(Sensor):
@@ -73,9 +65,8 @@ class MosquitoSensor(Sensor):
     if match_alert_with_humidity_sensor > 0:
        pass'''
 
-
-    def __init__(self):
-        self.app_label = 'alerts'
+    class Meta:
+        app_label = 'alerts'
 
 
 class BrightnessSensor(Sensor):
@@ -85,9 +76,8 @@ class BrightnessSensor(Sensor):
     match_alert_with_humidity_sensor = models.FloatField(default=0)
     match_alert_with_carbon_dioxide_sensor = models.FloatField(default=0)
 
-
-    def __init__(self):
-        self.app_label = 'alerts'
+    class Meta:
+        app_label = 'alerts'
 
 
 class CarbonDioxideSensor(Sensor):
@@ -97,6 +87,5 @@ class CarbonDioxideSensor(Sensor):
     match_alert_with_humidity_sensor = models.FloatField(default=0)
     match_alert_with_brightness_sensor = models.FloatField(default=0)
 
-
-    def __init__(self):
-        self.app_label = 'alerts'
+    class Meta:
+        app_label = 'alerts'

@@ -1,4 +1,4 @@
-import self as self
+
 from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
@@ -57,6 +57,6 @@ class User(AbstractBaseUser):
         "Is the user active?"
         return self.active
 
-    def __init__(self):
-        self.app_label = 'users'
+    class Meta:
+        app_label = 'users'
 

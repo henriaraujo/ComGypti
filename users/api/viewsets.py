@@ -7,3 +7,8 @@ from users.models import User
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = {
+        'cre'
+    }
+
+    #get_permission():

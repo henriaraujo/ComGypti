@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
      # Local
     #'users.apps.UserConfig', # new
-    'routers'
+    #'routers',
 ]
 
 MIDDLEWARE = [
@@ -88,23 +88,14 @@ DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
 
 
 DATABASE_APPS_MAPPING = {'alerts': 'controlcenter',
-                         'institutions': 'central',
-                         'users': 'central',
+                         'institutions': 'default',
+                         'users': 'default',
                          'tasks': 'publicentity'}
 
 
 AUTH_USER_MODEL = 'users.User'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', 'centraldb'),
-        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASS', 'henrique'),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',  # 8000 is default
-    },
-    'central': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DB_NAME', 'centraldb'),
         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
