@@ -57,6 +57,6 @@ class User(AbstractBaseUser):
         "Is the user active?"
         return self.active
 
-    # class Meta:
-    #     app_label = 'users'
+    class Meta:
+        app_label = 'users'
 

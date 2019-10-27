@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
      # Local
     #'users.apps.UserConfig', # new
-    #'routers.router'
+    'routers'
 ]
 
 MIDDLEWARE = [
@@ -84,18 +84,19 @@ WSGI_APPLICATION = 'comgypti.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-#DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
+DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
 
 
-#DATABASE_APPS_MAPPING = {'alert': 'publicentity',
-     #                    'institution': 'controlcenter',
-       #                  'notification': 'publicentity'}
+DATABASE_APPS_MAPPING = {'alerts': 'controlcenter',
+                         'institutions': 'central',
+                         'users': 'central',
+                         'tasks': 'publicentity'}
 
 
 AUTH_USER_MODEL = 'users.User'
 DATABASES = {
-    #'default': {},
-    'default': {
+    'default': {},
+    'central': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get('DB_NAME', 'centraldb'),
         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
@@ -122,7 +123,7 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASS', 'henrique'),
         'HOST': '127.0.0.1',
         'PORT': '5432',  # 8000 is default
-    }
+    },
 }
 
 # Password validation
