@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     #'users.apps.UserConfig', # new
     'routers',
     'rest_framework.authtoken',
+    'users',
 ]
 
 #REST_FRAMEWORK = {
@@ -97,13 +98,42 @@ DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
 
 DATABASE_APPS_MAPPING = {'alerts': 'controlcenter',
                          'institutions': 'default',
-                         #'users': 'default',
+                         'users': 'default',
                          'tasks': 'publicentity',
                          }
 
 
+#REST_FRAMEWORK = {
+  #  'DEFAULT_PERMISSION_CLASSES': [
+  #      'rest_framework.permissions.IsAuthenticated',
+  #  ]
+#}
+
 
 #AUTH_USER_MODEL = 'users.User'
+
+
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_EMAIL_FIELD = 'email'
+ACCOUNT_LOGOUT_ON_GET = True
+
+AUTH_USER_MODEL = 'users.User'
+
+REST_AUTH_SERIALIZERS = {
+    "USER_DETAILS_SERIALIZER": "users.serializers.CustomUserDetailsSerializer",
+}
+REST_AUTH_REGISTER_SERIALIZERS = {
+    "REGISTER_SERIALIZER": "users.serializers.CustomRegisterSerializer",
+}
+
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
