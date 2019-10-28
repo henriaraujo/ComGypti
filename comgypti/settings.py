@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
+    #'django_filters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,15 +44,20 @@ INSTALLED_APPS = [
     'core',
     'institutions',
     'tasks',
-    'users',
+    #'users',
     'data',
     'rest_framework',
     'googlemaps',
      # Local
     #'users.apps.UserConfig', # new
     'routers',
-   # 'googlemaps',
+    'rest_framework.authtoken',
 ]
+
+#REST_FRAMEWORK = {
+  #  'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+#}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,11 +97,13 @@ DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
 
 DATABASE_APPS_MAPPING = {'alerts': 'controlcenter',
                          'institutions': 'default',
-                         'users': 'default',
-                         'tasks': 'publicentity'}
+                         #'users': 'default',
+                         'tasks': 'publicentity',
+                         }
 
 
-AUTH_USER_MODEL = 'users.User'
+
+#AUTH_USER_MODEL = 'users.User'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
