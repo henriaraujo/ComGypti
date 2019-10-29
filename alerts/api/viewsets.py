@@ -1,6 +1,5 @@
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.viewsets import ModelViewSet
 
 from alerts.api.serializers import ReportSerializer, SensorSerializer, NotificationSerializer, HumiditySensorSerializer
 from rest_framework.viewsets import ModelViewSet

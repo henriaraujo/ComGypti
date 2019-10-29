@@ -1,7 +1,8 @@
-from rest_auth.registration.views import RegisterView
-
-from users.models import User
+from rest_framework.viewsets import ModelViewSet
 
 
-class CustomRegisterView(RegisterView):
+class ReportViewSet(ModelViewSet):
     queryset = User.objects.all()
+    serializer_class = UserSerializer
+   # authentication_classes = (TokenAuthentication,)
+   # permission_classes = (IsAuthenticated,)

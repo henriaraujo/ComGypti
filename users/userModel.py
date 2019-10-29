@@ -1,4 +1,5 @@
-from django.contrib.auth.models import BaseUserManager
+from django.contrib.auth.models import BaseUserManager, PermissionsMixin
+import django
 
 
 class UserManager(BaseUserManager):
@@ -10,6 +11,10 @@ class UserManager(BaseUserManager):
             date_of_birth=date_of_birth,
             name=name,
         )
+
+        # user.staff = True  #
+        # user.admin = True  #
+
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -21,6 +26,9 @@ class UserManager(BaseUserManager):
             date_of_birth=date_of_birth,
             name=name,
         )
+
+        # user.admin = True  #
+
         user.staff = True
         user.save(using=self._db)
         return user
@@ -30,7 +38,7 @@ class UserManager(BaseUserManager):
             email,
             password=password,
             date_of_birth=date_of_birth,
-            name="True",
+            name=name,
         )
         user.staff = True
         user.admin = True

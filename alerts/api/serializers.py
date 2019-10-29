@@ -18,8 +18,7 @@ class SensorSerializer(ModelSerializer):
 class NotificationSerializer(ModelSerializer):
     class Meta:
         model = Notification
-        fields = ('id','name')
-
+        fields = ('id', 'name')
 
 
 class HumiditySensorSerializer(ModelSerializer):
