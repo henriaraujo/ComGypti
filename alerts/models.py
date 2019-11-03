@@ -5,9 +5,11 @@ from institutions.models import PublicEntity, ControlCenter
 
 class Report(models.Model):
     title = models.CharField(max_length=12)
+    origin_address = models.TextField()
     description = models.TextField(max_length=800)
-
-    control_center = models.ForeignKey(ControlCenter, on_delete=models.CASCADE)
+    control_center_city = models.ForeignKey(ControlCenter, on_delete=models.CASCADE)
+    is_human_report = models.BooleanField(default=False)
+    is_sensor_report = models.BooleanField(default=False)
 
     class Meta:
         app_label = 'alerts'
@@ -15,7 +17,6 @@ class Report(models.Model):
 
 class Notification(models.Model):
     name = models.CharField(max_length=12)
-
     public_entity = models.ForeignKey(PublicEntity, on_delete=models.CASCADE)
 
     class Meta:
@@ -57,13 +58,6 @@ class MosquitoSensor(Sensor):
     match_alert_with_brightness_sensor = models.FloatField(default=0)
     match_alert_with_humidity_sensor = models.FloatField(default=0)
     match_alert_with_carbon_dioxide_sensor = models.FloatField(default=0)
-
-    '''if match_alert_with_brightness_sensor > 0:
-        pass
-    if match_alert_with_carbon_dioxide_sensor > 0:
-        pass
-    if match_alert_with_humidity_sensor > 0:
-       pass'''
 
     class Meta:
         app_label = 'alerts'

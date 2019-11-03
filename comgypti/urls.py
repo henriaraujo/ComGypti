@@ -17,24 +17,35 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from django.conf import settings
-from django.conf.urls.static import static
 from rest_framework.authtoken.views import obtain_auth_token
 
-from alerts.api.viewsets import ReportViewSet, SensorViewSet, NotificationViewSet, HumiditySensorViewSet
-#from users.api.viewsets import UserViewSet
-
+from alerts.api.viewsets import ReportViewSet, SensorViewSet, NotificationViewSet, HumiditySensorViewSet, \
+    MosquitoSensorViewSet, CarbonDioxideSensorViewSet, BrightnessSensorViewSet
+# from users.api.viewsets import UserViewSet
+from tasks.api.viewsets import MeasureViewSet, WorkAssignmentViewSet
+from tasks.models import WorkAssignment
+from users.api.viewsets import UserViewSet
 
 router = routers.DefaultRouter()
-#router.register('users', PontoTuristicoViewSet, base_name='ComGypti')
-#router.register('users', UserViewSet)
+# router.register('users', PontoTuristicoViewSet, base_name='ComGypti')
+# router.register('users', UserViewSet)
 router.register('reports', ReportViewSet)
-router.register('sensors', SensorViewSet)
 router.register('notifications', NotificationViewSet)
+
+router.register('sensors', SensorViewSet)
 router.register('humitysensors', HumiditySensorViewSet)
+router.register('mosquitosensors', MosquitoSensorViewSet)
+router.register('carbondioxidesensors', CarbonDioxideSensorViewSet)
+router.register('brightnesssensors', BrightnessSensorViewSet)
+
+
+router.register('users', UserViewSet)
+
+router.register('measures', MeasureViewSet)
+router.register('workassignments', WorkAssignmentViewSet)
 
 urlpatterns = [
-                  path('', include(router.urls)),
-                  path('admin/', admin.site.urls),
-                  path('api-token-auth/', obtain_auth_token),
-              ] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', include(router.urls)),
+    path('admin/', admin.site.urls),
+    path('api-token-auth/', obtain_auth_token),
+]  # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

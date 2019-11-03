@@ -13,6 +13,8 @@ class UserCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
 
+
+
     class Meta:
         model = User
         fields = ('email', 'date_of_birth')
@@ -43,7 +45,8 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('email', 'password', 'date_of_birth', 'is_active', 'is_admin')
+        fields = (
+            'email', 'password', 'date_of_birth', 'is_active', 'is_admin', 'is_agent', 'is_responsible', 'is_doctor')
 
     def clean_password(self):
         # Regardless of what the user provides, return the initial value.
@@ -65,14 +68,15 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': ('date_of_birth',)}),
-        ('Permissions', {'fields': ('is_admin',)}),
+        ('Permissions', {'fields': ('is_admin', 'is_agent', 'is_responsible', 'is_doctor')}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
     # overrides get_fieldsets to use this attribute when creating a user.
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'date_of_birth', 'password1', 'password2')}
+            'fields': ('email', 'date_of_birth', 'password1', 'password2', 'is_admin', 'is_agent',
+                       'is_responsible', 'is_doctor',)}
          ),
     )
     search_fields = ('email',)
@@ -82,6 +86,9 @@ class UserAdmin(BaseUserAdmin):
 
 # Now register the new UserAdmin...
 admin.site.register(User, UserAdmin)
+# admin.site.register(User)
+
+
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.
 admin.site.unregister(Group)

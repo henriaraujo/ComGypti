@@ -46,6 +46,9 @@ class User(AbstractBaseUser):
     date_of_birth = models.DateField()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    is_agent = models.BooleanField(default=False)
+    is_doctor = models.BooleanField(default=False)
+    is_responsible = models.BooleanField(default=False)
 
     objects = UserManager()
 

@@ -96,10 +96,10 @@ WSGI_APPLICATION = 'comgypti.wsgi.application'
 DATABASE_ROUTERS = ['routers.router.DatabaseAppsRouter']
 
 
-DATABASE_APPS_MAPPING = {'alerts': 'controlcenter',
+DATABASE_APPS_MAPPING = {'alerts': 'default', #'controlcenter',
                          'institutions': 'default',
                          'users': 'default',
-                         'tasks': 'publicentity',
+                         'tasks': 'default', #'publicentity',
                          }
 
 
@@ -109,6 +109,11 @@ DATABASE_APPS_MAPPING = {'alerts': 'controlcenter',
   #  ]
 #}
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),}
 
 #AUTH_USER_MODEL = 'users.User'
 

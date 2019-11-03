@@ -5,19 +5,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alerts/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerts/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alerts/api/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerts/api/viewsets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alerts/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alerts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerts/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alerts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerts/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alerts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/alerts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/comgypti/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/comgypti/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/institutions/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comgypti/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/comgypti/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/institutions/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/institutions/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/institutions/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/institutions/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/api/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/api/viewsets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/api/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/api/viewsets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20191028_2240.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0003_auto_20191028_2250.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0004_auto_20191028_2254.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/userModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/userModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/userModel.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +77,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.ComGypti">
+  <component name="RunManager" selected="Python.migrate general">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="ComGypti" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -288,7 +292,9 @@
       <workItem from="1572066818596" duration="1932000" />
       <workItem from="1572170390050" duration="2322000" />
       <workItem from="1572201201559" duration="1236000" />
-      <workItem from="1572202514295" duration="26813000" />
+      <workItem from="1572202514295" duration="48846000" />
+      <workItem from="1572529966473" duration="2141000" />
+      <workItem from="1572532650520" duration="9243000" />
     </task>
     <servers />
   </component>
@@ -311,14 +317,14 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/comgypti$mm_users.coverage" NAME="mm users Coverage Results" MODIFIED="1572209383944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/comgypti$makemigrations.coverage" NAME="makemigrations Coverage Results" MODIFIED="1572203246973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/comgypti$migrate_general.coverage" NAME="migrate general Coverage Results" MODIFIED="1572314045171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/comgypti$migrate_centraldb.coverage" NAME="migrate alerts Coverage Results" MODIFIED="1572314072476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/comgypti$makemigrations_general.coverage" NAME="makemigrations general Coverage Results" MODIFIED="1572314039269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/comgypti$migrate_institutions.coverage" NAME="migrate institutions Coverage Results" MODIFIED="1572314065138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/comgypti$migrate.coverage" NAME="migrate users Coverage Results" MODIFIED="1572314068558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comgypti$migrate_centraldb.coverage" NAME="migrate alerts Coverage Results" MODIFIED="1572462759569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comgypti$migrate_general.coverage" NAME="migrate general Coverage Results" MODIFIED="1572815179497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comgypti$migrate_institutions.coverage" NAME="migrate institutions Coverage Results" MODIFIED="1572462751285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comgypti$makemigrations_general.coverage" NAME="makemigrations general Coverage Results" MODIFIED="1572815173540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comgypti$migrate.coverage" NAME="migrate users Coverage Results" MODIFIED="1572462755336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ComGypti$manage.coverage" NAME="migrate Coverage Results" MODIFIED="1571189930952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ComGypti$migrate.coverage" NAME="migrate Coverage Results" MODIFIED="1572173166846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/comgypti$migrate_tasks.coverage" NAME="migrate tasks Coverage Results" MODIFIED="1572314080374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/comgypti$migrate_tasks.coverage" NAME="migrate tasks Coverage Results" MODIFIED="1572453816706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ComGypti$makemigrations.coverage" NAME="makemigrations Coverage Results" MODIFIED="1572173154920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 
-from alerts.models import Report, Sensor, Notification, HumiditySensor
+from alerts.models import Report, Sensor, Notification, HumiditySensor, CarbonDioxideSensor, MosquitoSensor, \
+    BrightnessSensor
 
 
 class ReportSerializer(ModelSerializer):
@@ -24,4 +25,22 @@ class NotificationSerializer(ModelSerializer):
 class HumiditySensorSerializer(ModelSerializer):
     class Meta:
         model = HumiditySensor
+        fields = ('id',)
+
+
+class MosquitoSensorSerializer(ModelSerializer):
+    class Meta:
+        model = MosquitoSensor
+        fields = ('id',)
+
+
+class CarbonDioxideSensorSerializer(ModelSerializer):
+    class Meta:
+        model = CarbonDioxideSensor
+        fields = ('id',)
+
+
+class BrightnessSensorSerializer(ModelSerializer):
+    class Meta:
+        model = BrightnessSensor
         fields = ('id',)
