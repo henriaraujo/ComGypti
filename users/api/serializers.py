@@ -6,8 +6,8 @@ from users.models import User  # , AgentUser
 class UserSerializer(ModelSerializer):
     class Meta:
         model = User
-        fields = (
-            'email', 'password', 'date_of_birth', 'is_active', 'is_admin',)
+        fields = '__all__'
+
 
 
 '''class AgentUserSerializer(ModelSerializer):

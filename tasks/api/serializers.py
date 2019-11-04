@@ -6,10 +6,10 @@ from tasks.models import Measure, WorkAssignment
 class MeasureSerializer(ModelSerializer):
     class Meta:
         model = Measure
-        fields = ('id',)
+        fields = '__all__'
 
 
 class WorkAssignmentSerializer(ModelSerializer):
     class Meta:
         model = WorkAssignment
-        fields = ('id',)
+        fields = '__all__'

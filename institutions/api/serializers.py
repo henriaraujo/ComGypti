@@ -6,10 +6,10 @@ from institutions.models import ControlCenter
 class InstitutionSerializer(ModelSerializer):
     class Meta:
         model = ControlCenter
-        fields = ('id',)
+        fields = '__all__'
 
 
 class ControlCenterSerializer(ModelSerializer):
     class Meta:
         model = ControlCenter
-        fields = ('id',)
+        fields = '__all__'

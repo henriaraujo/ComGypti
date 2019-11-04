@@ -22,6 +22,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 from alerts.api.viewsets import ReportViewSet, SensorViewSet, NotificationViewSet, HumiditySensorViewSet, \
     MosquitoSensorViewSet, CarbonDioxideSensorViewSet, BrightnessSensorViewSet
 # from users.api.viewsets import UserViewSet
+from institutions.api.viewsets import ControlCenterViewSet
 from tasks.api.viewsets import MeasureViewSet, WorkAssignmentViewSet
 from tasks.models import WorkAssignment
 from users.api.viewsets import UserViewSet
@@ -45,6 +46,7 @@ router.register('users', UserViewSet)
 
 router.register('measures', MeasureViewSet)
 router.register('workassignments', WorkAssignmentViewSet)
+router.register('controlcenters', ControlCenterViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

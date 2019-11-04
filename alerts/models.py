@@ -1,29 +1,22 @@
 from django.db import models
-from django.db.models.signals import post_save, pre_save
-from django.dispatch import receiver
-
 from institutions.models import PublicEntity, ControlCenter
-from data.models import Map
 
 
 class Report(models.Model):
-    title = models.CharField(max_length=12, default='troca')
-    origin_address = models.TextField(default='q bostya')
-    description = models.TextField(max_length=800, default='ai se eu te pego')
+    title = models.CharField(max_length=12)
+    origin_address_problem = models.TextField(max_length=500)
+    description = models.TextField(max_length=800)
     control_center_city = models.ForeignKey(ControlCenter, on_delete=models.CASCADE)
     is_human_report = models.BooleanField(default=True)
     is_sensor_report = models.BooleanField(default=False)
     geocode_destin = models.TextField(max_length=500, editable=False)
-    geocode_origin = models.TextField(max_length=500, default='assim vc me mata')
+    geocode_origin = models.TextField(max_length=500, editable=False)
 
     def __str__(self):
         return self.title
 
     class Meta:
         app_label = 'alerts'
-
-
-
 
 
 class Notification(models.Model):
