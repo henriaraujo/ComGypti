@@ -1,3 +1,5 @@
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
@@ -15,6 +17,15 @@ class ReportViewSet(ModelViewSet):
     authentication_classes = (TokenAuthentication,)
    # permission_classes = (IsAuthenticated, IsResponsible)
 
+
+@receiver(post_save, sender = Report)
+def my_handler(sender, **kwargs):
+   a = Report.objects.filter(id=Report.objects.filter().order_by('-id')[0].id)
+   a.update(title='Troqus')
+   a.update(geocode_destin='vai pra marte@')
+
+
+    #print(a)
 
 class NotificationViewSet(ModelViewSet):
     queryset = Notification.objects.all()

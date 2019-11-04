@@ -29,6 +29,8 @@ from users.api.viewsets import UserViewSet
 router = routers.DefaultRouter()
 # router.register('users', PontoTuristicoViewSet, base_name='ComGypti')
 # router.register('users', UserViewSet)
+
+
 router.register('reports', ReportViewSet)
 router.register('notifications', NotificationViewSet)
 

@@ -1,23 +1,37 @@
 from django.db import models
+from django.db.models.signals import post_save, pre_save
+from django.dispatch import receiver
 
 from institutions.models import PublicEntity, ControlCenter
+from data.models import Map
 
 
 class Report(models.Model):
-    title = models.CharField(max_length=12)
-    origin_address = models.TextField()
-    description = models.TextField(max_length=800)
+    title = models.CharField(max_length=12, default='troca')
+    origin_address = models.TextField(default='q bostya')
+    description = models.TextField(max_length=800, default='ai se eu te pego')
     control_center_city = models.ForeignKey(ControlCenter, on_delete=models.CASCADE)
-    is_human_report = models.BooleanField(default=False)
+    is_human_report = models.BooleanField(default=True)
     is_sensor_report = models.BooleanField(default=False)
+    geocode_destin = models.TextField(max_length=500, editable=False)
+    geocode_origin = models.TextField(max_length=500, default='assim vc me mata')
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         app_label = 'alerts'
 
 
+
+
+
 class Notification(models.Model):
     name = models.CharField(max_length=12)
     public_entity = models.ForeignKey(PublicEntity, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.id) + ' - ' + self.name
 
     class Meta:
         app_label = 'alerts'
@@ -26,6 +40,9 @@ class Notification(models.Model):
 class Sensor(models.Model):
     name = models.CharField(max_length=12)
     tolerance_to_make_a_alert = models.FloatField(max_length=12)
+
+    def __str__(self):
+        return str(self.id) + ' - ' + self.name
 
     class Meta:
         app_label = 'alerts'

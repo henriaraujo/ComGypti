@@ -1,3 +1,4 @@
+from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
 from alerts.models import Report, Sensor, Notification, HumiditySensor, CarbonDioxideSensor, MosquitoSensor, \
@@ -5,42 +6,44 @@ from alerts.models import Report, Sensor, Notification, HumiditySensor, CarbonDi
 
 
 class ReportSerializer(ModelSerializer):
+    control_center_city = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
+
     class Meta:
         model = Report
-        fields = ('id', 'title', 'description',)
+        fields = '__all__'
 
 
 class SensorSerializer(ModelSerializer):
     class Meta:
         model = Sensor
-        fields = ('id',)
+        fields = '__all__'
 
 
 class NotificationSerializer(ModelSerializer):
     class Meta:
         model = Notification
-        fields = ('id', 'name')
+        fields = '__all__'
 
 
 class HumiditySensorSerializer(ModelSerializer):
     class Meta:
         model = HumiditySensor
-        fields = ('id',)
+        fields = '__all__'
 
 
 class MosquitoSensorSerializer(ModelSerializer):
     class Meta:
         model = MosquitoSensor
-        fields = ('id',)
+        fields = '__all__'
 
 
 class CarbonDioxideSensorSerializer(ModelSerializer):
     class Meta:
         model = CarbonDioxideSensor
-        fields = ('id',)
+        fields = '__all__'
 
 
 class BrightnessSensorSerializer(ModelSerializer):
     class Meta:
         model = BrightnessSensor
-        fields = ('id',)
+        fields = '__all__'

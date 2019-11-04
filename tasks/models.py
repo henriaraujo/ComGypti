@@ -4,7 +4,7 @@ from institutions.models import PublicEntity
 
 
 class Measure(models.Model):
-    options = {0: 'Call Agents', 1: 'Spray Inseticide', 2: 'ActiveDefenseMechanism'}
+    options = ('Call Agents', 'Spray Inseticide', 'ActiveDefenseMechanism',)
     public_entity = models.ForeignKey(PublicEntity, on_delete=models.CASCADE)
 
     class Meta:

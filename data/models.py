@@ -1,3 +1,5 @@
+from django.db import models
+
 import googlemaps
 
 class Map:
@@ -5,5 +7,5 @@ class Map:
     gmaps = googlemaps.Client(key=mapsKey)
 
 
-class Localisation:
+class Localisation(models.Model):
     sensor_alert_localization = Map.gmaps.reverse_geocode((40.714224, -73.961452))
