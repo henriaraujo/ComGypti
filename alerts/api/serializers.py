@@ -13,15 +13,18 @@ class ReportSerializer(ModelSerializer):
         fields = '__all__'
 
 
-class SensorSerializer(ModelSerializer):
+class NotificationSerializer(ModelSerializer):
+    report = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
+    public_entity = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
+
     class Meta:
-        model = Sensor
+        model = Notification
         fields = '__all__'
 
 
-class NotificationSerializer(ModelSerializer):
+class SensorSerializer(ModelSerializer):
     class Meta:
-        model = Notification
+        model = Sensor
         fields = '__all__'
 
 

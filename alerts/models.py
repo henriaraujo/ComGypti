@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from institutions.models import PublicEntity, ControlCenter
 
@@ -11,6 +13,8 @@ class Report(models.Model):
     is_sensor_report = models.BooleanField(default=False)
     geocode_destin = models.TextField(max_length=500, editable=False)
     geocode_origin = models.TextField(max_length=500, editable=False)
+    date = models.TextField(default= datetime.now)
+    way_to_report_problem = models.TextField(max_length=1000, editable=False)
 
     def __str__(self):
         return self.title
@@ -22,6 +26,11 @@ class Report(models.Model):
 class Notification(models.Model):
     name = models.CharField(max_length=12)
     public_entity = models.ForeignKey(PublicEntity, on_delete=models.CASCADE)
+    report = models.OneToOneField(
+        Report,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
 
     def __str__(self):
         return str(self.id) + ' - ' + self.name
@@ -33,6 +42,7 @@ class Notification(models.Model):
 class Sensor(models.Model):
     name = models.CharField(max_length=12)
     tolerance_to_make_a_alert = models.FloatField(max_length=12)
+    coordenate = models.TextField(max_length=25, null=True)
 
     def __str__(self):
         return str(self.id) + ' - ' + self.name
