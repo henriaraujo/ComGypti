@@ -15,9 +15,7 @@ class ReportViewSet(ModelViewSet):
     serializer_class = ReportSerializer
     authentication_classes = (TokenAuthentication,)
 
-
 # permission_classes = (IsAuthenticated, IsResponsible)
-
 
 @receiver(post_save, sender=Report)
 def generate_directions(**kwargs):
@@ -32,12 +30,10 @@ def generate_directions(**kwargs):
     a.update(way_to_report_problem=loc.give_directions(last_reported_saved.origin_address_problem,
                                                        last_reported_saved.control_center_city.address))
 
-
 class NotificationViewSet(ModelViewSet):
     queryset = Notification.objects.all()
     serializer_class = NotificationSerializer
     # authentication_classes = (TokenAuthentication,)
-
 
 # permission_classes = (IsAuthenticated, IsAgent)
 
